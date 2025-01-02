@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    background-color: rgb(27, 27, 34);
+    height: 100vh;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+#border-effect {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    border: 0px solid white;
+}
+
+
+
+#ball {
+    height: 30px;
+    aspect-ratio: 1;
+    background-color: #fafafa;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+#reflector {
+    width: 100px;
+    height: 20px;
+    border-radius: 100vmax;
+    background-color: #fafafa;
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    outline: 0px solid rgba(255, 255, 255, 0.3);
+    transition: outline 0.2s ease background-color 0.5s ease;
+}
+
+#score-container {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 3rem;
+    transition: all 0.2s ease-out;
+}
+
+#restart-game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(27, 27, 34);
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: none;
+}
+
+#restart-game:hover {
+    background-color: yellow;
+}
