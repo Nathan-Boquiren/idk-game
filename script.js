@@ -185,7 +185,6 @@ function updateScore() {
 }
 
 function ballReflectEffect() {
-  cl("this function works");
   reflector.style.outline = "10px solid rgba(255, 255, 255, 0.3)";
   setTimeout(function () {
     reflector.style.outline = "0px solid rgba(255, 255, 255, 0.3)";
