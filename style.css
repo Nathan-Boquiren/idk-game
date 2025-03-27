@@ -4,33 +4,63 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
 #app {
     background-color: rgb(27, 27, 34);
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     position: relative;
     transition: all 0.5s ease;
 }
 
-#border-effect {
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-    border: 0px solid white;
-}
-
-
 
 #ball {
     height: 30px;
-    aspect-ratio: 1;
+    width: 30px;
     background-color: #fafafa;
     border-radius: 50%;
     position: absolute;
+    transform: translate(-50%, -50%);
+}
 
+#ball.bounce-y {
+    animation: bounceY 0.2s ease forwards;
+}
+
+@keyframes bounceY {
+    from {
+        height: 30px;
+    }
+
+    50% {
+        height: 20px;
+    }
+
+    to {
+        height: 30px;
+    }
+}
+
+#ball.bounce-x {
+    animation: bounceX 0.2s ease forwards;
+}
+
+@keyframes bounceX {
+    from {
+        width: 30px;
+    }
+
+    50% {
+        width: 20px;
+    }
+
+    to {
+        width: 30px;
+    }
 }
 
 #reflector {
@@ -43,11 +73,11 @@
     bottom: 20%;
     transform: translateX(-50%);
     cursor: pointer;
-    outline: 0px solid rgba(255, 255, 255, 0.3);
-    transition: outline 0.2s ease background-color 0.5s ease;
+    /* outline: 0px solid rgba(255, 255, 255, 0.3); */
+    /* transition: outline 0.2s ease background-color 0.5s ease; */
 }
 
-#score-container {
+/* #score-container {
     position: absolute;
     bottom: 50px;
     right: 50px;
@@ -55,9 +85,9 @@
     color: white;
     font-size: 3rem;
     transition: all 0.2s ease-out;
-}
+} */
 
-#restart-game {
+/* #restart-game {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -77,4 +107,4 @@
 
 #restart-game:hover {
     background-color: yellow;
-}
+} */
