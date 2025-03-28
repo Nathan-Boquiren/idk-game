@@ -21,7 +21,6 @@ let score = 0;
 const reflectorWidth = reflector.clientWidth;
 const reflectorHalf = reflectorWidth / 2;
 const reflectorY = reflector.offsetTop;
-// reflector.style.left = `${reflectorY}px`;
 
 function moveBall() {
   let reflectorX = reflector.offsetLeft;
