@@ -4,6 +4,7 @@ let cl = console.log;
 const app = document.getElementById("app");
 const ball = document.getElementById("ball");
 const reflector = document.getElementById("reflector");
+const scoreWrapper = document.getElementById("score-container");
 
 // ===== Variables =====
 const appWidth = app.clientWidth;
@@ -15,14 +16,17 @@ let y = 0;
 let yInc = 5;
 let xInc = 5;
 
+let score = 0;
+
 const reflectorWidth = reflector.clientWidth;
 const reflectorHalf = reflectorWidth / 2;
 const reflectorY = reflector.offsetTop;
+// reflector.style.left = `${reflectorY}px`;
 
 function moveBall() {
   let reflectorX = reflector.offsetLeft;
+  // reflector.style.left = `${x}px`;
   ball.style.left = `${x}px`;
-  reflector.style.left = `${x}px`;
   ball.style.top = `${y}px`;
   if (y > reflectorY + reflector.clientHeight + ballRadius) {
     clearInterval(intervalId);
@@ -54,6 +58,7 @@ function moveBall() {
     setTimeout(() => {
       ball.classList.remove("bounce-y");
     }, 200);
+    updateScore();
   }
 
   x += xInc;
@@ -86,3 +91,8 @@ document.addEventListener("mouseup", () => {
     isDragging = false;
   }
 });
+
+function updateScore() {
+  score += 5;
+  scoreWrapper.innerHTML = score;
+}
